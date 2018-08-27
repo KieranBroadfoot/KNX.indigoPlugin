@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PluginConfig>
+	<Field id="topLabel" type="label" fontSize="small" fontColor="darkgray">
+		<Label>Please provide the type and network address for your KNX network. This plugin currently only supports a knxd installation.</Label>
+	</Field>
+	<Field id="knxConnectionType" type="menu" defaultValue="knxd">
+		<Label>Type:</Label>
+		<List>
+			<Option value="knxd">KNXD</Option>
+			<Option value="tunnel">KNX Tunnel (Not Yet Supported)</Option>
+		</List>
+	</Field>
+	<Field id="knxNetworkLocation" type="textfield" defaultValue="192.168.0.10">
+		<Label>KNX Interface Address:</Label>
+	</Field>
+	<Field id="knxNetworkPort" type="textfield" defaultValue="6720">
+		<Label>KNX Interface Port:</Label>
+	</Field>
+	<Field id="knxDebug" type="checkbox" defaultValue="false">
+		<Label>Debug:</Label>
+		<Description>See more logging from KNX</Description>
+	</Field>
+	<Field id="separator" type="separator"/>
+	<Field type="label" id="knxWizardLabel" fontSize="small" fontColor="darkgray">
+		<Label>Entering your ETS5 knxproj file will allow the plugin to attempt to automatically load Group Addresses in Indigo.</Label>
+	</Field>
+	<Field id="knxGALoader" type="checkbox" defaultValue="false">
+		<Label>Load from ETS file?</Label>
+	</Field>
+	<Field id="knxWizardETS5Path" type="textfield" defaultValue="/Users/kieran/NO12-Test.knxproj">
+		<Label>knxproj Path:</Label>
+	</Field>
+	<Field id="knxWizardETS4" type="checkbox" defaultValue="false">
+		<Label>Using ETS4?:</Label>
+	</Field>
+</PluginConfig>

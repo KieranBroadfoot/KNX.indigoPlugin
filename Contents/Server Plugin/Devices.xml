@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Devices>
+	<Device type="relay" id="knxSwitch">
+		<Name>KNX Relay</Name>
+		<ConfigUI>
+			<Field type="label" id="knxSwitchLabel">
+				<Label>Enter the Set and Status group addresses for your KNX Switch.</Label>
+			</Field>
+			<Field id="knxSwitchSetGroupAddress" type="menu" visibleBindingId="enterManually" visibleBindingValue="false">
+				<Label>On/Off Set Group Address:</Label>
+				<List class="self" filter="stuff" method="generateGroupAddressList"/>
+			</Field>
+			<Field id="knxSwitchSetGroupAddressManual" type="textfield" defaultValue="x/x/x" visibleBindingId="enterManually" visibleBindingValue="true">
+				<Label>On/Off Set Group Address:</Label>
+			</Field>
+			<Field id="knxSwitchStatusGroupAddress" type="menu" visibleBindingId="enterManually" visibleBindingValue="false">
+				<Label>On/Off Status Group Address:</Label>
+				<List class="self" filter="stuff" method="generateGroupAddressList"/>
+			</Field>
+			<Field id="knxSwitchStatusGroupAddressManual" type="textfield" defaultValue="x/x/x" visibleBindingId="enterManually" visibleBindingValue="true">
+				<Label>On/Off Status Group Address:</Label>
+			</Field>
+			<Field id="enterManually" type="checkbox" defaultValue="false">
+				<Label>Enter Manually?</Label>
+			</Field>
+		</ConfigUI>
+	</Device>
+
+	<Device type="dimmer" id="knxDimmer">
+		<Name>KNX Dimmer</Name>
+		<ConfigUI>
+			<Field type="label" id="knxSwitchLabel">
+				<Label>KNX Dimmers typically have five group addresses representing set and status for On/Off and Dimming.</Label>
+			</Field>
+			<Field id="knxDimmerSetOnOffGroupAddress" type="menu" visibleBindingId="enterManually" visibleBindingValue="false">
+				<Label>On/Off Set Group Address:</Label>
+				<List class="self" filter="stuff" method="generateGroupAddressList"/>
+			</Field>
+			<Field id="knxDimmerSetOnOffGroupAddressManual" type="textfield" defaultValue="x/x/x" visibleBindingId="enterManually" visibleBindingValue="true">
+				<Label>On/Off Set Group Address:</Label>
+			</Field>
+			<Field id="knxDimmerStatusOnOffGroupAddress" type="menu" visibleBindingId="enterManually" visibleBindingValue="false">
+				<Label>On/Off Status Group Address:</Label>
+				<List class="self" filter="stuff" method="generateGroupAddressList"/>
+			</Field>
+			<Field id="knxDimmerStatusOnOffGroupAddressManual" type="textfield" defaultValue="x/x/x" visibleBindingId="enterManually" visibleBindingValue="true">
+				<Label>On/Off Status Group Address:</Label>
+			</Field>
+			<Field id="knxDimmerSetAbsDimGroupAddress" type="menu" visibleBindingId="enterManually" visibleBindingValue="false">
+				<Label>Absolute Dim Set Group Address:</Label>
+				<List class="self" filter="stuff" method="generateGroupAddressList"/>
+			</Field>
+			<Field id="knxDimmerSetAbsDimGroupAddressManual" type="textfield" defaultValue="x/x/x" visibleBindingId="enterManually" visibleBindingValue="true">
+				<Label>Absolute Dim Set Group Address:</Label>
+			</Field>
+			<Field id="knxDimmerSetRelDimGroupAddress" type="menu" visibleBindingId="enterManually" visibleBindingValue="false">
+				<Label>Relative Dim Set Group Address:</Label>
+				<List class="self" filter="stuff" method="generateGroupAddressList"/>
+			</Field>
+			<Field id="knxDimmerSetRelDimGroupAddressManual" type="textfield" defaultValue="x/x/x" visibleBindingId="enterManually" visibleBindingValue="true">
+				<Label>Relative Dim Set Group Address:</Label>
+			</Field>
+			<Field id="knxDimmerStatusBrightnessGroupAddress" type="menu" visibleBindingId="enterManually" visibleBindingValue="false">
+				<Label>Brightness Status Group Address:</Label>
+				<List class="self" filter="stuff" method="generateGroupAddressList"/>
+			</Field>
+			<Field id="knxDimmerStatusBrightnessGroupAddressManual" type="textfield" defaultValue="x/x/x" visibleBindingId="enterManually" visibleBindingValue="true">
+				<Label>Brightness Status Group Address:</Label>
+			</Field>
+			<Field id="enterManually" type="checkbox" defaultValue="false">
+				<Label>Enter Manually?</Label>
+			</Field>
+		</ConfigUI>
+	</Device>
+	
+	<Device type="sensor" id="knxPir">
+		<Name>KNX PIR</Name>
+		<ConfigUI>
+			<Field type="label" id="knxPirLabel">
+				<Label>Enter the group address that represents a triggering of this sensor.</Label>
+			</Field>
+			<Field id="knxPirStatusGroupAddress" type="menu" visibleBindingId="enterManually" visibleBindingValue="false">
+				<Label>PIR Status Group Address:</Label>
+				<List class="self" filter="stuff" method="generateGroupAddressList"/>
+			</Field>
+			<Field id="knxPirStatusGroupAddressManual" type="textfield" defaultValue="x/x/x" visibleBindingId="enterManually" visibleBindingValue="true">
+				<Label>PIR Status Group Address:</Label>
+			</Field>
+			<Field id="enterManually" type="checkbox" defaultValue="false">
+				<Label>Enter Manually?</Label>
+			</Field>
+		</ConfigUI>
+	</Device>
+	
+	<Device type="sensor" id="knxSensor">
+		<Name>KNX NO/NC Sensor</Name>
+		<ConfigUI>
+			<Field type="label" id="knxSensorLabel">
+				<Label>Enter the group address that represents a triggering of this sensor.</Label>
+			</Field>
+			<Field id="knxSensorStatusGroupAddress" type="menu" visibleBindingId="enterManually" visibleBindingValue="false">
+				<Label>Sensor Status Group Address:</Label>
+				<List class="self" filter="stuff" method="generateGroupAddressList"/>
+			</Field>
+			<Field id="knxSensorStatusGroupAddressManual" type="textfield" defaultValue="x/x/x" visibleBindingId="enterManually" visibleBindingValue="true">
+				<Label>Sensor Status Group Address:</Label>
+			</Field>
+			<Field id="enterManually" type="checkbox" defaultValue="false">
+				<Label>Enter Manually?</Label>
+			</Field>
+		</ConfigUI>
+	</Device>
+	
+	<Device type="sensor" id="knxLightSensor">
+		<Name>KNX Light Sensor</Name>
+		<ConfigUI>
+			<Field type="label" id="knxLightSensorLabel">
+				<Label>Enter the group address that publishes the relevant lux value for this sensor.</Label>
+			</Field>
+			<Field id="knxLightSensorStatusGroupAddress" type="menu" visibleBindingId="enterManually" visibleBindingValue="false">
+				<Label>Light Sensor Status Group Address:</Label>
+				<List class="self" filter="stuff" method="generateGroupAddressList"/>
+			</Field>
+			<Field id="knxLightSensorStatusGroupAddressManual" type="textfield" defaultValue="x/x/x" visibleBindingId="enterManually" visibleBindingValue="true">
+				<Label>Light Sensor Status Group Address:</Label>
+			</Field>
+			<Field id="enterManually" type="checkbox" defaultValue="false">
+				<Label>Enter Manually?</Label>
+			</Field>
+			<Field id="SupportsSensorValue" type="checkbox" defaultValue="true" hidden="true"/>
+		</ConfigUI>
+	</Device>
+	
+	<Device type="sensor" id="knxTemperatureSensor">
+		<Name>KNX Temperature Sensor</Name>
+		<ConfigUI>
+			<Field type="label" id="knxTempSensorLabel">
+				<Label>Enter the group address that publishes the relevant temperature value for this sensor.</Label>
+			</Field>
+			<Field id="knxTempSensorStatusGroupAddress" type="menu" visibleBindingId="enterManually" visibleBindingValue="false">
+				<Label>Temperature Sensor Status Group Address:</Label>
+				<List class="self" filter="stuff" method="generateGroupAddressList"/>
+			</Field>
+			<Field id="knxTempSensorStatusGroupAddressManual" type="textfield" defaultValue="x/x/x" visibleBindingId="enterManually" visibleBindingValue="true">
+				<Label>Temperature Sensor Status Group Address:</Label>
+			</Field>
+			<Field id="enterManually" type="checkbox" defaultValue="false">
+				<Label>Enter Manually?</Label>
+			</Field>
+			<Field id="SupportsSensorValue" type="checkbox" defaultValue="true" hidden="true"/>
+		</ConfigUI>
+	</Device>
+	
+	<Device type="thermostat" id="knxThermostat">
+		<Name>KNX Thermostat</Name>
+		<ConfigUI>
+			<Field type="label" id="knxThermostatLabel">
+				<Label>Not supported yet.</Label>
+			</Field>
+		</ConfigUI>
+	</Device>
+</Devices>
