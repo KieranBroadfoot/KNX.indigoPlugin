@@ -42,12 +42,11 @@ class Plugin(indigo.PluginBase):
         indigo.PluginBase.__del__(self)
 
     def startup(self):
-        if self.loadConnections(self.knxLocation, self.knxPort):
-            try:
-                self.groupAddresses = json.loads(self.pluginPrefs["group_addresses"])
-            except Exception as e:
-                pass
-            self.generateStatusAddresses()
+        try:
+            self.groupAddresses = json.loads(self.pluginPrefs["group_addresses"])
+        except Exception as e:
+            pass
+        self.generateStatusAddresses()
 
     def shutdown(self):
         self.logger.info("stopping knx plugin")
@@ -203,7 +202,7 @@ class Plugin(indigo.PluginBase):
                     # unable to send to socket... catches error on shutdown
                     continue
             else:
-                self.logger.info("no knx socket to use. re-try in 10 seconds")
+                self.logger.info("not connected to knx. re-try in 10 seconds")
                 self.sleep(10)
 
     def stopConcurrentThread(self):
