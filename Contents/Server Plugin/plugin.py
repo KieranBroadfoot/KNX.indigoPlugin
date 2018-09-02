@@ -42,6 +42,7 @@ class Plugin(indigo.PluginBase):
         indigo.PluginBase.__del__(self)
 
     def startup(self):
+        self.loadConnections(self.knxLocation, self.knxPort)
         try:
             self.groupAddresses = json.loads(self.pluginPrefs["group_addresses"])
         except Exception as e:
@@ -276,19 +277,18 @@ class Plugin(indigo.PluginBase):
     ########################################
     
     def loadConnections(self, location, port):
-        while True:
-            try:
-                self.knxSocket = socket.create_connection((location, port),2)
-                if self.knxSocket.fileno != -1:
-                    self.knxSocket.send(self.encode_data('HHB', [EIB_OPEN_GROUPCON, 0, 0]))
-                    self.logger.info("connected to knx at "+location)
-                    return True
-                else:
-                    self.logger.warn("no valid knx endpoint.")
-                    self.sleep(10)
-            except Exception:
-                self.logger.warn("unable to connect to knx at "+location)
+        try:
+            self.knxSocket = socket.create_connection((location, port),2)
+            if self.knxSocket.fileno != -1:
+                self.knxSocket.send(self.encode_data('HHB', [EIB_OPEN_GROUPCON, 0, 0]))
+                self.logger.info("connected to knx at "+location)
+                return True
+            else:
+                self.logger.warn("no valid knx endpoint.")
                 self.sleep(10)
+        except Exception:
+            self.logger.warn("unable to connect to knx at "+location)
+            self.sleep(10)
 
     def writeToKNX(self, type, group_address, value):
         while True:

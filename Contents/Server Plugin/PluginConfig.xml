@@ -27,7 +27,7 @@
 	<Field id="knxGALoader" type="checkbox" defaultValue="false">
 		<Label>Load from ETS file?</Label>
 	</Field>
-	<Field id="knxWizardETS5Path" type="textfield" defaultValue="/Users/kieran/NO12-Test.knxproj">
+	<Field id="knxWizardETS5Path" type="textfield" defaultValue="/Users/my_user/myhouse.knxproj">
 		<Label>knxproj Path:</Label>
 	</Field>
 	<Field id="knxWizardETS4" type="checkbox" defaultValue="false">
